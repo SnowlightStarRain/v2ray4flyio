@@ -8,6 +8,7 @@ mkdir -p ${DOWNLOAD_PATH}
 cd ${DOWNLOAD_PATH} || exit
 
 TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/v2fly/v2ray-core/releases/latest | grep 'tag_name' | cut -d\" -f4)
+TAG=v4.45.0
 if [ -z "${TAG}" ]; then
     echo "Error: Get v2ray latest version failed" && exit 1
 fi
